@@ -6,10 +6,9 @@ SIMD instruction set for your CPU with --enable-sse, --enable-sse2, --enable-k7
 or --enable-altivec. You can get FFTW from http://www.fftw.org/.
 
 Install with
-   autoreconf -i
-   ./configure
-   make
-   su -c "make install".
+   ./autogen.sh --disable-nls
+   make -j LDFLAGS=-no-undefined
+   cp .libs/*.dll path/to/install
 
 This code is normally built from XML source, using Perl and XML::Parser. I
 distribute the generated .c files, so you wont need perl, but if you want to
