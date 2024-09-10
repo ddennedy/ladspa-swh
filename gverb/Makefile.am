@@ -3,9 +3,9 @@ RANLIB=ranlib
 
 noinst_HEADERS = gverb.h gverbdsp.h
 
-noinst_LIBRARIES = libgverb.a
+noinst_LTLIBRARIES = libgverb.la
 
-libgverb_a_SOURCES = gverb.c gverbdsp.c
+libgverb_la_SOURCES = gverb.c gverbdsp.c $(noinst_HEADERS)
 
 # Disable autoheader. 
 AUTOHEADER=echo
